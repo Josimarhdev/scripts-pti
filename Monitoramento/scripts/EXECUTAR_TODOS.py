@@ -5,22 +5,22 @@ import sys
 import pandas as pd
 from dotenv import load_dotenv 
 
-# --- CONFIGURAÇÃO DE CAMINHOS (CRUCIAL) ---
-# Define a pasta onde ESTE arquivo (EXECUTAR_TODOS.py) está
+
+
 pasta_scripts = Path(__file__).resolve().parent
 
-# Define as pastas irmãs (sobe um nível com .parent e entra na pasta desejada)
+
 pasta_inputs = pasta_scripts.parent / "inputs"
 pasta_saida = pasta_scripts.parent / "outputs"
 pasta_raiz_projeto = pasta_scripts.parent.parent
 
-# Adiciona raiz ao path caso precise de módulos de fora
+
 sys.path.append(str(pasta_raiz_projeto))
 
 # Carrega variáveis de ambiente
 load_dotenv()
 
-# Tenta importar a lib. Como está na mesma pasta, o import direto é preferível.
+
 try:
     from lib_validacao import export_query_to_csv
 except ImportError:
@@ -39,8 +39,8 @@ for wb in [belem_wb, expansao_wb, grs_wb, expansao_ms_wb]:
     wb.remove(wb.active)
 
 # Disponibiliza variáveis globais para os scripts executados via exec()
-# DICA: Adicionei 'pasta_inputs' e 'pasta_saida' nas globais. 
-# Se seus sub-scripts usarem essas variáveis em vez de strings fixas, eles nunca mais quebram.
+
+# Se seus sub-scripts usarem essas variáveis em vez de strings fixas
 globals().update({
     "belem_wb": belem_wb,
     "expansao_wb": expansao_wb,
