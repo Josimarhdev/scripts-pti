@@ -40,7 +40,6 @@ for wb in [belem_wb, expansao_wb, grs_wb, expansao_ms_wb]:
 
 # Disponibiliza variáveis globais para os scripts executados via exec()
 
-# Se seus sub-scripts usarem essas variáveis em vez de strings fixas
 globals().update({
     "belem_wb": belem_wb,
     "expansao_wb": expansao_wb,
@@ -69,8 +68,6 @@ if tem_credenciais:
     try:
         for sql_file, csv_file in mapa_queries:
             print(f"Processando: {sql_file} -> {csv_file}...")
-            # Note que sql_file precisa estar acessível. Se estiver em 'scripts', ok.
-            # Se estiver em outra pasta, precisa ajustar o caminho aqui também.
             export_query_to_csv(sql_file, csv_file, pasta_inputs)
         print(">>> Bases atualizadas com sucesso.")
     except Exception as e:
