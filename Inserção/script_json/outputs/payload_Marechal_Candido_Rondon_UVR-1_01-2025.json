@@ -1,0 +1,52 @@
+{
+    "step1": {
+        "mcmr_observacoes": "formulário migrado do Reciclômetro v1: 0",
+        "mcmr_renda": 2900.0,
+        "mcmr_quantidade": 30,
+        "rd_mes_referencia": "2025-01-01",
+        "fk_guvr_id": 65
+    },
+    "step2": {
+        "if_receita_total_venda_reciclaveis": 115584.26,
+        "if_fundo_caixa_total": 0.0,
+        "if_despesa_total_operacao_uvr": 0.0,
+        "if_despesa_total_manutencao_uvr": 0.0
+    },
+    "step3": {
+        "vr_emicao_notas_ficais": false,
+        "anf_nota_fiscal": ""
+    },
+    "step4": {
+        "tipo_formulario": true,
+        "frd_venda_reciclaveis": [
+            {
+                "fk_gsr_id": 18,
+                "fk_gtr_id": null,
+                "vr_quantidade": 55.0,
+                "vr_valor": 1099.8,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 19.996363636363636
+            },
+            {
+                "fk_gsr_id": 32,
+                "fk_gtr_id": null,
+                "vr_quantidade": 215.0,
+                "vr_valor": 215.0,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 1.0
+            }
+        ]
+    },
+    "step5": [
+        {
+            "fk_cs_id": 1,
+            "ps_periodo_repasse": null,
+            "ps_repasse_aquisicao_equipamentos": null,
+            "ps_valor": 76402.32
+        }
+    ],
+    "step6": [],
+    "step7": {
+        "bg_total_rejeitos": 75790.0
+    }
+}

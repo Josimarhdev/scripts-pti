@@ -1,0 +1,48 @@
+{
+    "step1": {
+        "mcmr_observacoes": "formulário migrado do Reciclômetro v1:  O total de Associados que trabalharam todos os dias( não tiveram faltas) foram 3 três)",
+        "mcmr_renda": 6642.2,
+        "mcmr_quantidade": 20,
+        "rd_mes_referencia": "2024-12-01",
+        "fk_guvr_id": 23
+    },
+    "step2": {
+        "if_receita_total_venda_reciclaveis": 65586.5,
+        "if_fundo_caixa_total": 0.0,
+        "if_despesa_total_operacao_uvr": 4451.88,
+        "if_despesa_total_manutencao_uvr": 0.0
+    },
+    "step3": {
+        "vr_emicao_notas_ficais": false,
+        "anf_nota_fiscal": ""
+    },
+    "step4": {
+        "tipo_formulario": true,
+        "frd_venda_reciclaveis": [
+            {
+                "fk_gsr_id": 50,
+                "fk_gtr_id": null,
+                "vr_quantidade": 33514.0,
+                "vr_valor": 25135.5,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.75
+            }
+        ]
+    },
+    "step5": [],
+    "step6": [
+        {
+            "de_valor": 4220.76,
+            "fk_cd_id": 3,
+            "fk_td_id": 6
+        },
+        {
+            "de_valor": 231.12,
+            "fk_cd_id": 3,
+            "fk_td_id": 11
+        }
+    ],
+    "step7": {
+        "bg_total_rejeitos": 48200.0
+    }
+}

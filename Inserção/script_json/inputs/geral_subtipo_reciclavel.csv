@@ -1,0 +1,73 @@
+gsr_id,gsr_subtipo,gsr_codigo,gsr_ativo,fk_gtr_id
+1,Bloco,CF-15a,true,1
+2,Latinha,CF-15b,true,1
+3,Panela,CF-15c,true,1
+4,"Tubinho de desodorante, spray e aerossóis",CF-15d,true,1
+5,Antimônio,CF-15e,true,1
+6,Radiador,CF-15f,true,1
+7,"Perfil de persiana (tubos,  chapas)",CF-15g,true,1
+8,Limpo (mel),CF-16a,true,2
+9,Sujo,CF-16b,true,2
+10,Radiador,CF-16c,true,2
+11,Liga de aço-carbono,CF-17a,true,3
+12,Aço inoxidável,CF-17b,true,3
+13,Ferro fundido,CF-18a,true,4
+14,Sucatas (Latas de aço),CF-18b,true,4
+15,Chaparia,CF-18c,true,4
+16,Torneiras e maçanetas,CF-19,true,5
+17,Chumbo,CF-20,true,6
+18,Outro Metal,CF-21,true,7
+19,"Tubulações e forros (canos, forro, etc)",CF-24,true,8
+20,Filme cristal,CF-25a,true,9
+21,Filme stretch,CF-25b,true,9
+22,Embalagens de produtos de limpeza,CF-25c,true,9
+23,Geomembrana,CF-25d,true,9
+24,Injeção (caixaria),CF-25e,true,9
+25,"Filme (sacolinhas, sacos de lixo, lonas)",CF-26,true,10
+26,Cristal,CF-27a,true,11
+27,Verde,CF-27b,true,11
+28,Azul,CF-27c,true,11
+29,Colorido,CF-27d,true,11
+30,Bandeja,CF-27e,true,11
+31,Fita de arquear fardos,CF-27f,true,11
+32,Óleo,CF-27g,true,11
+33,Copos descartáveis,CF-28a,true,12
+34,Rígido (forro de geladeira),CF-28b,true,12
+35,Expansível (Isopor),CF-28c,true,12
+36,"Rígido (balde, bacia)",CF-29a,true,13
+37,Branco,CF-29b,true,13
+38,Preto,CF-29c,true,13
+39,Transparente,CF-29d,true,13
+40,Plástico Colorido,CF-29e,true,13
+41,Pote de margarina,CF-29f,true,13
+42,Mineral (copinho de água),CF-29g,true,13
+43,"Filme (estralador, embalagens de bolacha maria)",CF-29h,true,13
+44,"Ráfia (sacaria, bigbag)",CF-29i,true,13
+45,Embalagens de salgadinho metalizada,CF-30,true,14
+46,"Carcaça de eletrodomésticos (TV, monitor, etc)",CF-31,true,15
+47,Outro Plástico,CF-32,true,16
+48,Branco,CF-34,true,17
+49,Misto,CF-35,true,18
+50,"Tubete de papelão, caixas em geral",CF-36,true,19
+51,Cimento,CF-37,true,20
+52,Tetra Pak,CF-38,true,21
+53,Outro Papéis,CF-39,true,22
+54,Motor,CF-41,true,23
+55,Bateria,CF-42,true,24
+56,Celular,CF-43a,true,25
+57,Informática,CF-43b,true,25
+58,Eletrônica,CF-43c,true,25
+59,Memória,CF-44,true,26
+60,Processador,CF-45,true,27
+61,Placa Mãe,CF-46,true,28
+62,Placa Marrom,CF-47,true,29
+63,Placa Verde,CF-48,true,30
+64,Outro Elétrico,CF-49,true,31
+65,Caco,CF-51,true,32
+66,Inteiro,CF-52,true,33
+67,Madeira,CF-53,true,34
+68,Óleo de cozinha,CF-54,true,35
+69,Bazar de roupas,CF-55,true,36
+70,Roupas para estopa,CF-56,true,37
+71,Eletrônicos consertados,CF-57,true,38
+72,Outro Material,CF-58,true,39

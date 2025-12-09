@@ -1,0 +1,246 @@
+{
+    "step1": {
+        "mcmr_observacoes": "formulário migrado do Reciclômetro v1: 01/12 à 23/12/2024",
+        "mcmr_renda": 3185.0,
+        "mcmr_quantidade": 34,
+        "rd_mes_referencia": "2024-12-01",
+        "fk_guvr_id": 20
+    },
+    "step2": {
+        "if_receita_total_venda_reciclaveis": 69057.61,
+        "if_fundo_caixa_total": 0.0,
+        "if_despesa_total_operacao_uvr": 5327.0,
+        "if_despesa_total_manutencao_uvr": 3417.0
+    },
+    "step3": {
+        "vr_emicao_notas_ficais": false,
+        "anf_nota_fiscal": ""
+    },
+    "step4": {
+        "tipo_formulario": true,
+        "frd_venda_reciclaveis": [
+            {
+                "fk_gsr_id": 2,
+                "fk_gtr_id": null,
+                "vr_quantidade": 470.0,
+                "vr_valor": 3760.0,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 8.0
+            },
+            {
+                "fk_gsr_id": 3,
+                "fk_gtr_id": null,
+                "vr_quantidade": 189.0,
+                "vr_valor": 1845.0,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 9.761904761904763
+            },
+            {
+                "fk_gsr_id": 9,
+                "fk_gtr_id": null,
+                "vr_quantidade": 32.0,
+                "vr_valor": 384.0,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 12.0
+            },
+            {
+                "fk_gsr_id": 13,
+                "fk_gtr_id": null,
+                "vr_quantidade": 7160.0,
+                "vr_valor": 5012.0,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.7
+            },
+            {
+                "fk_gsr_id": 18,
+                "fk_gtr_id": null,
+                "vr_quantidade": 122.86,
+                "vr_valor": 1198.05,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 9.75134299202344
+            },
+            {
+                "fk_gsr_id": 19,
+                "fk_gtr_id": null,
+                "vr_quantidade": 287.0,
+                "vr_valor": 287.0,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 1.0
+            },
+            {
+                "fk_gsr_id": 22,
+                "fk_gtr_id": null,
+                "vr_quantidade": 3113.5,
+                "vr_valor": 7240.65,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 2.325566083186125
+            },
+            {
+                "fk_gsr_id": 25,
+                "fk_gtr_id": null,
+                "vr_quantidade": 6655.5,
+                "vr_valor": 6509.200000000001,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.9780181804522576
+            },
+            {
+                "fk_gsr_id": 27,
+                "fk_gtr_id": null,
+                "vr_quantidade": 2168.5,
+                "vr_valor": 8782.42,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 4.049997694258704
+            },
+            {
+                "fk_gsr_id": 29,
+                "fk_gtr_id": null,
+                "vr_quantidade": 554.0,
+                "vr_valor": 110.8,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.19999999999999998
+            },
+            {
+                "fk_gsr_id": 32,
+                "fk_gtr_id": null,
+                "vr_quantidade": 123.0,
+                "vr_valor": 147.6,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 1.2
+            },
+            {
+                "fk_gsr_id": 35,
+                "fk_gtr_id": null,
+                "vr_quantidade": 1610.0,
+                "vr_valor": 483.0,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.3
+            },
+            {
+                "fk_gsr_id": 36,
+                "fk_gtr_id": null,
+                "vr_quantidade": 4699.0,
+                "vr_valor": 5873.75,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 1.25
+            },
+            {
+                "fk_gsr_id": 43,
+                "fk_gtr_id": null,
+                "vr_quantidade": 344.0,
+                "vr_valor": 17.2,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.049999999999999996
+            },
+            {
+                "fk_gsr_id": 44,
+                "fk_gtr_id": null,
+                "vr_quantidade": 1458.0,
+                "vr_valor": 437.4,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.3
+            },
+            {
+                "fk_gsr_id": 48,
+                "fk_gtr_id": null,
+                "vr_quantidade": 2525.0,
+                "vr_valor": 1641.57,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.6501267326732673
+            },
+            {
+                "fk_gsr_id": 49,
+                "fk_gtr_id": null,
+                "vr_quantidade": 9462.0,
+                "vr_valor": 2838.6,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.3
+            },
+            {
+                "fk_gsr_id": 50,
+                "fk_gtr_id": null,
+                "vr_quantidade": 23315.0,
+                "vr_valor": 17486.25,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.75
+            },
+            {
+                "fk_gsr_id": 51,
+                "fk_gtr_id": null,
+                "vr_quantidade": 3361.0,
+                "vr_valor": 1344.4,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.4
+            },
+            {
+                "fk_gsr_id": 52,
+                "fk_gtr_id": null,
+                "vr_quantidade": 1763.5,
+                "vr_valor": 617.22,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.34999716472923165
+            },
+            {
+                "fk_gsr_id": 54,
+                "fk_gtr_id": null,
+                "vr_quantidade": 106.5,
+                "vr_valor": 127.8,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 1.2
+            },
+            {
+                "fk_gsr_id": 57,
+                "fk_gtr_id": null,
+                "vr_quantidade": 39.5,
+                "vr_valor": 118.5,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 3.0
+            },
+            {
+                "fk_gsr_id": 65,
+                "fk_gtr_id": null,
+                "vr_quantidade": 17470.0,
+                "vr_valor": 2795.2,
+                "vr_emicao_notas_ficais": false,
+                "vr_preco_medio": 0.16
+            }
+        ]
+    },
+    "step5": [
+        {
+            "fk_cs_id": 1,
+            "ps_periodo_repasse": null,
+            "ps_repasse_aquisicao_equipamentos": null,
+            "ps_valor": 30460.27
+        }
+    ],
+    "step6": [
+        {
+            "de_valor": 1278.0,
+            "fk_cd_id": 3,
+            "fk_td_id": 3
+        },
+        {
+            "de_valor": 251.0,
+            "fk_cd_id": 3,
+            "fk_td_id": 6
+        },
+        {
+            "de_valor": 281.0,
+            "fk_cd_id": 3,
+            "fk_td_id": 8
+        },
+        {
+            "de_valor": 3517.0,
+            "fk_cd_id": 3,
+            "fk_td_id": 28
+        },
+        {
+            "de_valor": 3417.0,
+            "fk_cd_id": 3,
+            "fk_td_id": 5
+        }
+    ],
+    "step7": {
+        "bg_total_rejeitos": 15606.0
+    }
+}
