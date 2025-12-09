@@ -5,22 +5,30 @@ import sys
 import pandas as pd
 from dotenv import load_dotenv 
 
-# Tenta importar a função de exportação da nossa lib
-try:
-    from Monitoramento.scripts.lib_validacao import export_query_to_csv
-except ImportError:
-    # Fallback caso a estrutura de pastas esteja diferente
-    from Monitoramento.scripts.lib_validacao import export_query_to_csv
+# --- CONFIGURAÇÃO DE CAMINHOS (CRUCIAL) ---
+# Define a pasta onde ESTE arquivo (EXECUTAR_TODOS.py) está
+pasta_scripts = Path(__file__).resolve().parent
+
+# Define as pastas irmãs (sobe um nível com .parent e entra na pasta desejada)
+pasta_inputs = pasta_scripts.parent / "inputs"
+pasta_saida = pasta_scripts.parent / "outputs"
+pasta_raiz_projeto = pasta_scripts.parent.parent
+
+# Adiciona raiz ao path caso precise de módulos de fora
+sys.path.append(str(pasta_raiz_projeto))
 
 # Carrega variáveis de ambiente
 load_dotenv()
 
-# --- CONFIGURAÇÃO INICIAL ---
-pasta_scripts = Path(__file__).parent
-pasta_inputs = pasta_scripts.parent / "inputs"
-pasta_saida = pasta_scripts.parent / "outputs"
+# Tenta importar a lib. Como está na mesma pasta, o import direto é preferível.
+try:
+    from lib_validacao import export_query_to_csv
+except ImportError:
+    # Fallback caso o Python se perca nos caminhos relativos
+    sys.path.append(str(pasta_scripts))
+    from lib_validacao import export_query_to_csv
 
-# Inicializa os workbooks globais
+# --- INICIALIZAÇÃO DE WORKBOOKS ---
 belem_wb = Workbook()
 expansao_wb = Workbook()
 grs_wb = Workbook()
@@ -30,22 +38,25 @@ expansao_ms_wb = Workbook()
 for wb in [belem_wb, expansao_wb, grs_wb, expansao_ms_wb]:
     wb.remove(wb.active)
 
-# Disponibiliza globais
+# Disponibiliza variáveis globais para os scripts executados via exec()
+# DICA: Adicionei 'pasta_inputs' e 'pasta_saida' nas globais. 
+# Se seus sub-scripts usarem essas variáveis em vez de strings fixas, eles nunca mais quebram.
 globals().update({
     "belem_wb": belem_wb,
     "expansao_wb": expansao_wb,
     "grs_wb": grs_wb,
-    "expansao_ms_wb": expansao_ms_wb
+    "expansao_ms_wb": expansao_ms_wb,
+    "pasta_inputs": pasta_inputs, 
+    "pasta_saida": pasta_saida
 })
 
-#ATUALIZAÇÃO DOS DADOS (BANCO -> CSV)
+# --- ETAPA 1: ATUALIZAÇÃO DOS DADOS (BANCO -> CSV) ---
 
-print("\n=== ETAPA 1: Atualizando Bases de Dados (Forms 1 a 4) ===")
+print("\n=== ETAPA 1: Atualizando Bases de Dados ===")
 
 db_vars = ["DB_NAME", "DB_USER", "DB_PASSWORD", "DB_HOST"]
 tem_credenciais = all(os.getenv(var) for var in db_vars)
 
-# Nome do arquivo SQL -> Nome do CSV que será gerado
 mapa_queries = [
     ("form1.sql", "form1.csv"),
     ("form2.sql", "form2.csv"),
@@ -54,63 +65,72 @@ mapa_queries = [
 ]
 
 if tem_credenciais:
-    print("Credenciais encontradas. Iniciando extração dos dados...")
+    print("Credenciais encontradas. Iniciando extração...")
     try:
-        # Loop para gerar os 4 CSVs baseados nos SQLs
         for sql_file, csv_file in mapa_queries:
             print(f"Processando: {sql_file} -> {csv_file}...")
+            # Note que sql_file precisa estar acessível. Se estiver em 'scripts', ok.
+            # Se estiver em outra pasta, precisa ajustar o caminho aqui também.
             export_query_to_csv(sql_file, csv_file, pasta_inputs)
-        
         print(">>> Bases atualizadas com sucesso.")
-
     except Exception as e:
-        print(f"[ERRO CRÍTICO] Falha na conexão ou extração dos Forms: {e}")
-        print("Tentando continuar com os CSVs existentes (se houver)...")
+        print(f"[ERRO CRÍTICO] Falha na conexão ou extração: {e}")
 else:
-    print("[AVISO] Sem credenciais de banco. Usando arquivos CSV locais antigos.")
+    print("[AVISO] Sem credenciais. Usando CSVs locais.")
 
-# EXECUÇÃO DOS SCRIPTS DE FORMATAÇÃO
+# --- ETAPA 2: EXECUÇÃO DOS SCRIPTS ---
 
-print("\n=== ETAPA 2: Gerando Planilhas de Monitoramento (Forms) ===")
+print("\n=== ETAPA 2: Gerando Planilhas de Monitoramento ===")
 
-# Verifica se os CSVs existem antes de rodar
+# Lista dos scripts que serão rodados
+scripts_para_rodar = [
+    "script_form1.py",
+    "script_form2.py",
+    "script_form3.py",
+    "script_form4.py"
+]
+
+# Verifica CSVs
 for _, csv_file in mapa_queries:
-    caminho_csv = pasta_inputs / csv_file
-    if not caminho_csv.exists():
-        print(f"[ALERTA] O arquivo {csv_file} não existe na pasta inputs!")
+    if not (pasta_inputs / csv_file).exists():
+        print(f"[ALERTA] Arquivo {csv_file} não encontrado em: {pasta_inputs}")
 
 try:
-    exec(open("scripts/script_form1.py").read())
-    print("Form 1: OK")
-    exec(open("scripts/script_form2.py").read())
-    print("Form 2: OK")
-    exec(open("scripts/script_form3.py").read())
-    print("Form 3: OK")
-    exec(open("scripts/script_form4.py").read())
-    print("Form 4: OK")
+    for script_nome in scripts_para_rodar:
+        caminho_script_filho = pasta_scripts / script_nome
+        
+        if caminho_script_filho.exists():
+            print(f"Executando {script_nome}...")
+            # O exec lê o arquivo usando o caminho completo (pathlib)
+            with open(caminho_script_filho, 'r', encoding='utf-8') as f:
+                exec(f.read(), globals()) # Passa as globais explicitamente
+            print(f"{script_nome}: OK")
+        else:
+            print(f"[ERRO] Script não encontrado: {caminho_script_filho}")
+
 except Exception as e:
-    print(f"[ERRO] Falha na execução dos scripts de formulário: {e}")
+    print(f"[ERRO] Falha durante a execução dos scripts: {e}")
 
 
+# --- ETAPA 3: VALIDAÇÃO ---
 
-# Validação
-
-print("\n=== Executando Script de Validação ===")
+print("\n=== ETAPA 3: Validação ===")
 
 if tem_credenciais:
     try:
-        # Este script já tem sua própria lógica de buscar no banco (consulta_grs, etc)
-        exec(open("scripts/script_validacao.py").read())
-        print(">>> Validação finalizado.")
+        val_script = pasta_scripts / "script_validacao.py"
+        with open(val_script, 'r', encoding='utf-8') as f:
+            exec(f.read(), globals())
+        print(">>> Validação finalizada.")
     except Exception as e:
-        print(f"[ERRO] Falha no script de validação: {e}")
+        print(f"[ERRO] Falha na validação: {e}")
 else:
-    print("[PULADO] Sem credenciais para script de validação.")
+    print("[PULADO] Validação requer credenciais.")
 
 
-# SALVAMENTO FINAL DOS WORKBOOKS
+# --- ETAPA 4: SALVAMENTO ---
 
-print("\n=== ETAPA 4: Salvando Arquivos Monitoramento ===")
+print("\n=== ETAPA 4: Salvando Arquivos ===")
 
 mapa_saida = {
     belem_wb: "Belém",
@@ -120,16 +140,16 @@ mapa_saida = {
 }
 
 for wb, nome_pasta in mapa_saida.items():
+    # Cria caminho: outputs/NomePasta
     caminho_final_pasta = pasta_saida / nome_pasta
     caminho_final_pasta.mkdir(parents=True, exist_ok=True)
     
     caminho_arquivo = caminho_final_pasta / "0 - Monitoramento Form 1, 2 e 3.xlsx"
     
-    # Só salva se tiver algo na planilha 
     if len(wb.sheetnames) > 0:
         wb.save(caminho_arquivo)
-        print(f"Salvo: {caminho_arquivo}")
+        print(f"Salvo em: {caminho_arquivo}")
     else:
-        print(f"[AVISO] Workbook vazio para {nome_pasta}, não salvo.")
+        print(f"[AVISO] {nome_pasta} vazio. Não salvo.")
 
-print("\nProcesso Geral Finalizado.")
+print("\nProcesso Finalizado.")
