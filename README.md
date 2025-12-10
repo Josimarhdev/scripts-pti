@@ -14,8 +14,8 @@ Responsável pela extração primária de dados. Este módulo conecta-se ao banc
 ### 2. Análise de Engajamento GRS
 Um módulo focado em Business Intelligence que consome os dados do monitoramento para calcular KPIs de desempenho. O script cruza informações de múltiplos formulários para gerar uma "Nota de Engajamento" para cada município, produzindo relatórios visuais (Heatmaps) que classificam o envio de dados entre níveis Alto, Médio e Baixo.
 
-### 3. Gerador de Indicadores Financeiros (Lógica Fuzzy)
-Ferramenta de normalização de dados desestruturados. Utiliza algoritmos de *Fuzzy Matching* (aproximação de texto) para ler descrições manuais de despesas e receitas, mapeando-as automaticamente para templates padronizados. Essencial para transformar dados brutos de entrada em indicadores macro e microeconômicos consistentes.
+### 3. Gerador de Indicadores Financeiros 
+Ferramenta de normalização de dados desestruturados. Utiliza algoritmos de *Fuzzy Matching* (aproximação de texto) para ler descrições de despesas e receitas, mapeando-as automaticamente para templates padronizados. Essencial para transformar dados brutos de entrada em indicadores macro e microeconômicos consistentes.
 
 ### 4. Integração via API
 Módulo final de ponte de dados. Automatiza a conversão de planilhas processadas (`.xlsx` e `.csv`) em payloads JSON estruturados e realiza o envio em lote para sistemas externos via requisições HTTP (POST) autenticadas.
