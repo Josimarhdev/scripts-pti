@@ -2,7 +2,7 @@
 
 Este projeto automatiza a verificação do engajamento de Municípios e Unidades de Valorização de Recicláveis (UVRs) no envio dos formulários de monitoramento. O script cruza dados de diferentes planilhas de controle, calcula percentuais de envio e gera um relatório visual com indicadores de desempenho.
 
-## 📋 Funcionalidades
+## Funcionalidades
 
 - **Leitura de Dados:** Importa dados de arquivos Excel de monitoramento (Forms 1, 2, 3 e 4).
 - **Verificação de Status:** Checa se os formulários fixos (1, 2 e 3) foram enviados ou duplicados.
@@ -10,7 +10,7 @@ Este projeto automatiza a verificação do engajamento de Municípios e Unidades
 - **Cálculo de Engajamento:** Gera uma nota de engajamento baseada na razão entre *Envios Realizados* vs *Envios Esperados*.
 - **Relatório Visual:** Gera uma planilha Excel (`analise_engajamento.xlsx`) formatada com cores condicionais para facilitar a leitura.
 
-## 📂 Estrutura de Diretórios Necessária
+## Estrutura de Diretórios Necessária
 
 O script utiliza caminhos relativos para localizar os arquivos de entrada e o utilitário de cores. A estrutura de pastas deve seguir o padrão abaixo:
 
@@ -28,7 +28,7 @@ O script utiliza caminhos relativos para localizar os arquivos de entrada e o ut
         └── outputs/              # Onde o relatório final será salvo automaticamente
             └── analise_engajamento.xlsx
 
-## 🛠️ Pré-requisitos
+## Pré-requisitos
 
 O script requer **Python 3** e as bibliotecas `pandas` e `openpyxl`.
 
@@ -36,7 +36,7 @@ Instalação das dependências via pip:
 
     pip install pandas openpyxl
 
-## 🚀 Como Executar
+## Como Executar
 
 1. Certifique-se de que os arquivos de entrada (`0 - Monitoramento...`) estejam na pasta correta (`../Monitoramento/outputs/GRS/`).
 2. Execute o script via terminal dentro da pasta onde o arquivo `.py` está salvo:
@@ -45,7 +45,7 @@ Instalação das dependências via pip:
 
 3. O resultado será gerado na subpasta `outputs/` (criada automaticamente se não existir) dentro do diretório do script.
 
-## 📊 Lógica de Cálculo do Engajamento
+## Lógica de Cálculo do Engajamento
 
 O nível de engajamento é definido pela porcentagem de formulários entregues em relação ao total esperado até a data atual.
 

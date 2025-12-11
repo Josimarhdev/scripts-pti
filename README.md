@@ -4,7 +4,7 @@ Este repositório centraliza um conjunto de ferramentas desenvolvidas em Python 
 
 O projeto atua como um hub de integração, cobrindo desde a extração de dados brutos, até a geração de relatórios gerenciais e envio de informações via API.
 
-## 🚀 Visão Geral dos Módulos
+## Visão Geral dos Módulos
 
 O sistema é dividido em quatro frentes principais de atuação:
 
@@ -20,7 +20,7 @@ Ferramenta de normalização de dados desestruturados. Utiliza algoritmos de *Fu
 ### 4. Integração via API
 Módulo final de ponte de dados. Automatiza a conversão de planilhas processadas (`.xlsx` e `.csv`) em payloads JSON estruturados e realiza o envio em lote para sistemas externos via requisições HTTP (POST) autenticadas.
 
-## 🛠️ Stack Tecnológica
+## Stack Tecnológica
 
 O ecossistema é construído inteiramente em **Python 3**, utilizando as seguintes tecnologias principais:
 

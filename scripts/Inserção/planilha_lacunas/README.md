@@ -2,7 +2,7 @@
 
 Script em Python para automação e geração de planilhas de indicadores macro e microeconômicos para Unidades de Valorização de Recicláveis (UVRs). O sistema processa dados brutos, aplica limpeza de texto e utiliza lógica *fuzzy* (aproximação de texto) para preencher templates Excel padronizados.
 
-## 📋 Funcionalidades
+## Funcionalidades
 
 - **Geração em Lote:** Cria arquivos individuais por Município, UVR e Mês de Referência.
 - **Tratamento de Strings:** Normalização de texto e remoção de caracteres especiais.
@@ -10,7 +10,7 @@ Script em Python para automação e geração de planilhas de indicadores macro 
 - **Mapa de Sinônimos:** Dicionário customizável para forçar correspondências de termos específicos (ex: "EPI", "PET Colorido").
 - **Estrutura de Dados:** Separação automática entre dados operacionais, de manutenção e fundo de caixa.
 
-## 🛠️ Dependências
+## Dependências
 
 O projeto utiliza Python 3.x e as seguintes bibliotecas:
 
@@ -25,7 +25,7 @@ Para instalar:
 pip install pandas openpyxl fuzzywuzzy python-Levenshtein
 ```
 
-## 📂 Estrutura de Arquivos
+## Estrutura de Arquivos
 
 O script exige uma estrutura de diretórios específica para localizar os inputs. Certifique-se de organizar as pastas da seguinte maneira:
 
@@ -45,7 +45,7 @@ O script exige uma estrutura de diretórios específica para localizar os inputs
                                # Abas necessárias: 'Receitas', 'Despesas', 'Materiais', 'Macro Dados'
 ```
 
-## ⚙️ Configuração
+## Configuração
 
 No início do código (`script.py`), você pode ajustar as seguintes constantes globais:
 
@@ -53,7 +53,7 @@ No início do código (`script.py`), você pode ajustar as seguintes constantes 
 - **`MATCH_THRESHOLD`**: Limiar de similaridade (inteiro de 0 a 100). O padrão é `70`. Itens com similaridade abaixo deste valor serão categorizados como "Outros".
 - **`SYNONYM_MAP`**: Dicionário para correções manuais. Adicione termos aqui quando a correspondência automática falhar consistentemente.
 
-## 🚀 Como Executar
+## Como Executar
 
 1. Verifique se os arquivos `dados.xlsx` e `template.xlsx` estão na pasta `Inserção/planilha_lacunas/inputs`.
 2. Execute o script via terminal:
@@ -63,7 +63,7 @@ No início do código (`script.py`), você pode ajustar as seguintes constantes 
 3. Acompanhe o log no terminal para ver quais arquivos estão sendo gerados.
 4. As planilhas preenchidas estarão na pasta `planilhas_geradas`.
 
-## 🧠 Lógica de Preenchimento
+## Lógica de Preenchimento
 
 ### 1. Macro Dados
 Preenche dados cadastrais (Município, UVR, Data), número de catadores, renda média e totais calculados.
