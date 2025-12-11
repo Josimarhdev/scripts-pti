@@ -59,13 +59,11 @@ for _, row in df_input.iterrows():
     if municipio_uvr_normalizado in dados_atualizados:
         dados_atualizados[municipio_uvr_normalizado]["datas"].append(data_envio_formatada)
         dados_atualizados[municipio_uvr_normalizado]["status"] = "Duplicado"
-        print('entrou if')
     else:
         dados_atualizados[municipio_uvr_normalizado] = {
             "datas": [data_envio_formatada],
             "status": "Enviado"
         }
-        print('else')
 
 
 # Processa cada uma das planilhas auxiliares (Belém, GRS e Expansão)

@@ -159,7 +159,6 @@ for nome, caminho in planilhas_auxiliares.items():
         # Normaliza o nome do município
         if isinstance(municipio_original, str):
             municipio_normalizado = normalizar_texto(municipio_original)
-            print(municipio_normalizado)
         else:
             municipio_normalizado = ""
 
@@ -197,8 +196,6 @@ for nome, caminho in planilhas_auxiliares.items():
         # Coloração regional
         regional = row_data[0]
         if regional in cores_regionais:
-            print(regional)
-            print(cores_regionais)
             cor_hex = cores_regionais[regional]
             novo_ws.cell(row=row_idx, column=1).fill = PatternFill(start_color=cor_hex, end_color=cor_hex, fill_type="solid")
 

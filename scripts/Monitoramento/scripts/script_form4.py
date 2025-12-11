@@ -334,7 +334,6 @@ for nome, caminho in planilhas_auxiliares.items():
  # processa a aba de irregulares (grs,expansao e belem)
 for nome, wb in wb_final.items():
 
-    print(nome)
     chaves_existentes = set()
     
     caminho_aux = planilhas_auxiliares[nome]
