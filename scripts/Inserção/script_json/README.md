@@ -95,8 +95,8 @@ Execute o script `json_script.py`.
 
 Este script irá:
 
-- Ler todos os arquivos `.xlsx` da pasta `inputs/`.
-- Ler todos os arquivos `.csv` de referência da pasta `inputs/`.
+- Ler todos os arquivos `.xlsx` da pasta `inputs/dados`.
+- Ler todos os arquivos `.csv` de referência da pasta `inputs/tabelas_referencia`.
 - Processar os dados e gerar os arquivos `payload_*.json` na pasta `outputs/`.
 
 No terminal, execute:
@@ -128,7 +128,7 @@ python3 enviar_payloads.py
 ## Exemplo de Execução
 
 ```bash
-$ python3 gerar_payload.py
+$ python3 json_script.py
 > Gerando payloads a partir das planilhas...
 
 $ python3 enviar_payloads.py

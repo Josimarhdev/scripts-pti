@@ -61,7 +61,7 @@ def create_payload(excel_file_path, ref_dir):
         
     except Exception as e:
         print(f"  [ERRO] Erro ao carregar arquivos de referência CSV: {e}", file=sys.stderr)
-        print(f"  Verifique se os arquivos de referência (geral_uvrs, etc.) estão na pasta 'inputs'.", file=sys.stderr)
+        print(f"  Verifique se os arquivos de referência (geral_uvrs, etc.) estão na pasta correta: {ref_dir}", file=sys.stderr)
         return None
 
     try:
@@ -292,26 +292,29 @@ if __name__ == "__main__":
     except NameError:
          SCRIPT_DIR = os.getcwd() 
     
-    INPUT_DIR = os.path.join(SCRIPT_DIR, "inputs")
+  
+    # Define a pasta base de inputs
+    BASE_INPUT_DIR = os.path.join(SCRIPT_DIR, "inputs")
+    
+    DATA_DIR = os.path.join(BASE_INPUT_DIR, "dados")               # Onde estão os .xlsx
+    REF_DIR = os.path.join(BASE_INPUT_DIR, "tabelas_referencia")   # Onde estão os .csv
 
     OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
     
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-
-    # Procura por arquivos .xlsx na pasta de inputs
-    search_pattern = os.path.join(INPUT_DIR, "*.xlsx")
+  
+    search_pattern = os.path.join(DATA_DIR, "*.xlsx")
     excel_files = glob.glob(search_pattern)
     
-
     excel_files = [f for f in excel_files if not os.path.basename(f).startswith('~$')]
     
     if not excel_files:
-        print(f"Erro: Nenhum arquivo '.xlsx' encontrado em {INPUT_DIR}", file=sys.stderr)
-        print("Por favor, verifique se os seus arquivos Excel (ex: Cafelândia_UVR-1_12-2024.xlsx) estão na pasta 'inputs'.", file=sys.stderr)
-        sys.exit(1) # Sai do script se nenhum arquivo for encontrado
+        print(f"Erro: Nenhum arquivo '.xlsx' encontrado em {DATA_DIR}", file=sys.stderr)
+        print("Por favor, verifique se os seus arquivos Excel estão na pasta 'inputs/dados'.", file=sys.stderr)
+        sys.exit(1) 
 
-    print(f"Encontrados {len(excel_files)} arquivo(s) Excel para processar...")
+    print(f"Encontrados {len(excel_files)} arquivo(s) Excel para processar em '{DATA_DIR}'...")
 
     for excel_file_path in excel_files:
         
@@ -319,7 +322,7 @@ if __name__ == "__main__":
         
         print(f"\n--- Processando arquivo: {base_filename} ---")
         
-        final_json_data = create_payload(excel_file_path, INPUT_DIR) 
+        final_json_data = create_payload(excel_file_path, REF_DIR) 
         
         if final_json_data:
 
