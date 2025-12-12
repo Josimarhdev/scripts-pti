@@ -10,23 +10,6 @@ Este projeto automatiza a verificação do engajamento de Municípios e Unidades
 - **Cálculo de Engajamento:** Gera uma nota de engajamento baseada na razão entre *Envios Realizados* vs *Envios Esperados*.
 - **Relatório Visual:** Gera uma planilha Excel (`analise_engajamento.xlsx`) formatada com cores condicionais para facilitar a leitura.
 
-## Estrutura de Diretórios Necessária
-
-O script utiliza caminhos relativos para localizar os arquivos de entrada e o utilitário de cores. A estrutura de pastas deve seguir o padrão abaixo:
-
-    Projeto/
-    ├── Monitoramento/
-    │   ├── scripts/
-    │   │   └── utils.py          # Contém o dicionário 'cores_regionais'
-    │   └── outputs/
-    │       └── GRS/
-    │           ├── 0 - Monitoramento Form 1, 2 e 3.xlsx
-    │           └── 0 - Monitoramento Form 4.xlsx
-    │
-    └── engajamento/              # Pasta onde este script reside
-        ├── script_engajamento.py # (Seu arquivo atual)
-        └── outputs/              # Onde o relatório final será salvo automaticamente
-            └── analise_engajamento.xlsx
 
 ## Pré-requisitos
 
@@ -38,7 +21,7 @@ Instalação das dependências via pip:
 
 ## Como Executar
 
-1. Certifique-se de que os arquivos de entrada (`0 - Monitoramento...`) estejam na pasta correta (`../Monitoramento/outputs/GRS/`).
+1. Certifique-se de que os arquivos de entrada (`0 - Monitoramento...`) estejam na pasta correta (`inputs/`).
 2. Execute o script via terminal dentro da pasta onde o arquivo `.py` está salvo:
 
     python nome_do_seu_script.py

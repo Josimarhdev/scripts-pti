@@ -7,14 +7,7 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Border, Side, Alignment
 import sys
 import os
-
-
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Constrói o caminho para a pasta onde está o utils.py
-path_to_utils = os.path.join(current_dir, '..', 'Monitoramento', 'scripts')
-sys.path.append(path_to_utils)
-from utils import cores_regionais # type: ignore
+from utils import cores_regionais 
 
 
 
@@ -22,13 +15,7 @@ def processar_planilhas_excel():
     
     # Pega o diretório onde este script está salvo (.../engajamento)
     diretorio_do_script = os.path.dirname(os.path.abspath(__file__))
-    
-    # Pega o diretório pai (raiz do projeto)
-    diretorio_pai = os.path.dirname(diretorio_do_script)
-
-    # --- AJUSTE DE CAMINHO DE ENTRADA ---
-
-    caminho_dos_arquivos = os.path.join(diretorio_pai, 'Monitoramento', 'outputs', 'GRS')
+    caminho_dos_arquivos = os.path.join(diretorio_do_script, 'inputs')
     
     arquivo_geral = os.path.join(caminho_dos_arquivos, '0 - Monitoramento Form 1, 2 e 3.xlsx')
     arquivo_form4 = os.path.join(caminho_dos_arquivos, '0 - Monitoramento Form 4.xlsx')

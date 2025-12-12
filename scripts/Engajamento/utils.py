@@ -1,0 +1,22 @@
+cores_regionais = {
+    "Gabriel": "A3DDFF",
+    "Bianca": "FFF7C9",
+    "Valquiria": "91F0D3",
+    "Valquíria": "91F0D3",
+    "Luana": "FFD2DE",
+    "Larissa": "EBC99F",
+    "Paranavaí": "B879D1",
+    "Ana Paula": "993399",
+    "Londrina": "A9C5E6",
+    "Francisco Beltrão": "B2FFFF",
+    "Maringá": "FFCCFF",
+    "Curitiba": "FFFF99",
+    "Guarapuava": "F1E0C6",
+    "Laranjeiras do Sul" : "FFD3AC",
+    "Cibax": "FDEE00",     
+    "Comafen": "FFA500",    
+    "Coripa": "008000",     
+    "Cifra": "00BFFF",    
+    "Conisul": "FF0000",    
+    "Gustavo" : "CCC0DA"
+}
