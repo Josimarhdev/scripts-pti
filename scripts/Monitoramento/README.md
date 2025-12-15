@@ -2,7 +2,7 @@
 
 Este repositório contém o ecossistema de scripts para automação, validação e monitoramento de envios de formulários. O sistema atua desde a extração de dados diretamente do banco de dados até a geração de relatórios em Excel com formatação condicional avançada.
 
-## 🚀 Fluxo de Execução
+## Fluxo de Execução
 
 O processo é orquestrado pelo script `EXECUTAR_TODOS.py` e opera em três etapas principais:
 
@@ -10,7 +10,7 @@ O processo é orquestrado pelo script `EXECUTAR_TODOS.py` e opera em três etapa
 2.  **Processamento (Forms)**: Leitura dos CSVs e atualização das planilhas de monitoramento (Forms 1 a 4), aplicando regras de negócio, cálculo de atrasos, gestão de abas mensais e formatação visual.
 3.  **Validação Cruzada**: Execução de scripts de auditoria que comparam os dados gerados com regras de validação visual (pintura de células, checagem de regionais e duplicatas).
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 - **`inputs/`**: Centraliza os dados de entrada.
     - Pastas das regionais (`0 - Belém`, `0 - Expansão`, `0 - GRS II`, `0 - Expansão MS`).
@@ -23,7 +23,7 @@ O processo é orquestrado pelo script `EXECUTAR_TODOS.py` e opera em três etapa
     - `script_validacao.py`: Gera relatórios de auditoria visual.
     - `lib_validacao.py` e `utils.py`: Bibliotecas auxiliares de estilo, conexão e normalização.
 
-## ⚙️ Configuração e Pré-requisitos
+## Configuração e Pré-requisitos
 
 O projeto utiliza variáveis de ambiente para conexão com o banco de dados.
 
@@ -45,7 +45,7 @@ DB_HOST=host
 DB_PORT=porta
 ```
 
-## 📊 Regras de Negócio por Formulário
+## Regras de Negócio por Formulário
 
 ### Form 1
 - **Escopo**: Município.
@@ -72,14 +72,14 @@ DB_PORT=porta
     - Novos envios irregulares são inseridos automaticamente no fim da lista.
 - **Expansão MS**: Suporte total à regional de Mato Grosso do Sul.
 
-## 🛡️ Script de Validação Visual
+## Script de Validação Visual
 
 Após a geração dos formulários, o módulo de validação (`script_validacao.py`) gera relatórios de auditoria:
 
 - **Verificação Visual**: Células inconsistentes são pintadas de vermelho automaticamente.
 - **Mapeamento de Regionais**: Utiliza um dicionário interno para garantir que cidades estejam vinculadas à regional correta (ex: "Cascavel" -> "Valquiria"), corrigindo desvios na fonte de dados.
 
-## 🚀 Como Executar
+## Como Executar
 
 1. Certifique-se de que o arquivo `.env` está configurado e as planilhas base estão na pasta `inputs/`.
 2. Navegue até a pasta de scripts e execute o orquestrador:

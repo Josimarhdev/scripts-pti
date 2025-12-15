@@ -4,7 +4,7 @@ Este repositório contém ferramentas desenvolvidas em Python para automatizar o
 
 O projeto visa eliminar lacunas, garantindo padronização na limpeza de dados, geração de relatórios em Excel e integração automática com APIs externas.
 
-## 📂 Visão Geral
+## Visão Geral
 
 O sistema é dividido em duas ferramentas principais que atuam em etapas distintas do ciclo de vida dos dados:
 
@@ -21,7 +21,7 @@ Responsável por converter os dados validados em formato digital e enviá-los pa
 
 ---
 
-## 🛠️ Tecnologias Principais
+## Tecnologias Principais
 
 O projeto é construído inteiramente em **Python 3.x**, utilizando as seguintes bibliotecas principais:
 
