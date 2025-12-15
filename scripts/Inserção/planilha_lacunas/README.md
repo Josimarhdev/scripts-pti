@@ -16,8 +16,7 @@ O projeto utiliza Python 3.x e as seguintes bibliotecas:
 
 - `pandas` (Manipulação de dados)
 - `openpyxl` (Leitura e escrita de arquivos Excel)
-- `fuzzywuzzy` (Comparação de strings e fuzzy logic)
-- `python-Levenshtein` (Opcional, mas recomendado para performance do fuzzywuzzy)
+- `fuzzywuzzy` (Comparação de strings)
 
 Para instalar:
 
