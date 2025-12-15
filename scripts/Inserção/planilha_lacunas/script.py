@@ -173,7 +173,7 @@ for index, row in grupos.iterrows():
         if pd.notna(nome) and nome in valores_despesas:
             ws_despesas.cell(row=r_idx, column=col_valor_idx).value = valores_despesas[nome]
 
-    #Materiais
+    # Materiais
     ws_materiais = wb['Materiais']
     opcoes_materiais_template = {clean_text(subtipo): subtipo for subtipo in template_materiais_df['Subtipo'].dropna()}
     mapa_categoria_material = pd.Series(template_materiais_df.Categoria.values, index=template_materiais_df.Subtipo).to_dict()
