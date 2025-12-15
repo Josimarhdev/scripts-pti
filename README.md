@@ -1,10 +1,10 @@
 # Scripts
 
-Este repositório centraliza um conjunto de ferramentas desenvolvidas em Python para a automação de processos, análise de dados e monitoramento de Unidades de Valorização de Recicláveis (UVRs) e gestão municipal.
+Este repositório centraliza um conjunto de ferramentas desenvolvidas em Python para a automação de processos, análise de dados e monitoramento de Unidades de Valorização de Recicláveis (UVRs).
 
 O projeto atua como um hub de integração, cobrindo desde a extração de dados brutos, até a geração de relatórios gerenciais e envio de informações via API.
 
-## Visão Geral dos Módulos
+## Visão Geral 
 
 O sistema é dividido em quatro frentes principais de atuação:
 
@@ -25,6 +25,6 @@ Módulo final de ponte de dados. Automatiza a conversão de planilhas processada
 O ecossistema é construído inteiramente em **Python 3**, utilizando as seguintes tecnologias principais:
 
 - **Manipulação de Dados:** `pandas`, `openpyxl`, `numpy`
-- **Processamento de Texto:** `fuzzywuzzy`, `python-Levenshtein`
+- **Processamento de Texto:** `fuzzywuzzy`
 - **Conectividade:** `psycopg2` (PostgreSQL), `requests` (API REST)
 - **Infraestrutura:** Gestão de variáveis de ambiente (`dotenv`)
