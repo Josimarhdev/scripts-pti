@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 import os
-import sys # Necessário para ajustar o caminho dos imports
+import sys 
 from datetime import datetime
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Border, Side, Alignment
@@ -232,7 +232,7 @@ def criar_planilha_final(df, expected_2024, expected_2025):
         adjusted_width = (max_length + 2)
         ws.column_dimensions[column].width = adjusted_width
 
-    # --- AJUSTE DE SAÍDA DO ARQUIVO ---
+    # --- SAÍDA DO ARQUIVO ---
     # Salva dentro da pasta 'engajamento/outputs'
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
     pasta_output = os.path.join(diretorio_atual, 'outputs')
